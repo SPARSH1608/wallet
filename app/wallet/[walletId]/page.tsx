@@ -177,7 +177,7 @@ export default function WalletPage({ params }: { params: Promise<{ walletId: str
 
                                     const preBalance = tx.meta.preBalances[0] || 0;
                                     const postBalance = tx.meta.postBalances[0] || 0;
-                                    const amountChanged = (postBalance - preBalance)
+                                    const amountChanged = (postBalance - preBalance) / 1000000000; // Convert lamports to SOL
                                     const fee = tx.meta.fee / 1000000000;
 
                                     const isOutgoing = amountChanged < 0;
@@ -236,7 +236,7 @@ function RealTransactionItem({ signature, time, amount, fee, type, accountKeys, 
             </div>
             <div className="text-right">
                 <div className={`font-bold text-sm ${type === 'incoming' ? 'text-green-400' : 'text-white'}`}>
-                    {type === 'incoming' ? '+' : '-'}{amount} SOL
+                    {amount} SOL
                 </div>
                 <div className="text-gray-400 text-xs">Fee: {fee} SOL</div>
             </div>
