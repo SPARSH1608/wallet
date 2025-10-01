@@ -122,7 +122,7 @@ export default function Home() {
   );
 }
 
-function Login({ openModal, setOpenModal, setType }: { openModal: Boolean, setOpenModal: (openModal: boolean) => void, setType: (type: string) => void }) {
+function Login({ openModal, setOpenModal, setType }: { openModal: boolean, setOpenModal: (openModal: boolean) => void, setType: (type: string) => void }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -213,7 +213,7 @@ function Login({ openModal, setOpenModal, setType }: { openModal: Boolean, setOp
 }
 
 
-function SignUp({ openModal, setOpenModal, setType }: { openModal: Boolean, setOpenModal: (openModal: boolean) => void, setType: (type: string) => void }) {
+function SignUp({ openModal, setOpenModal, setType }: { openModal: boolean, setOpenModal: (openModal: boolean) => void, setType: (type: string) => void }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')

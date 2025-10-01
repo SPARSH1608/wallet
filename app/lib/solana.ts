@@ -19,7 +19,7 @@ import bs58 from "bs58";
 import {Connection,Keypair,LAMPORTS_PER_SOL,PublicKey, sendAndConfirmTransaction, SystemProgram, Transaction} from '@solana/web3.js'
 
 export function createMnemonics( strength:number=128){
-     let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+     const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
      const userId=localStorage.getItem('currentUserId')
       if (!userId) {
     throw new Error("No user logged in");
@@ -36,7 +36,7 @@ users[userIndex].mnemonics=mnemonics
 }
 
 export function createWallet(gradient:string){
-     let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+     const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
      const userId=localStorage.getItem('currentUserId')
       if (!userId) {
     throw new Error("No user logged in");
@@ -66,7 +66,7 @@ return newWallet
 }
 
 export function deleteWallet(walletId:string){
-     let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+     const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const userId = localStorage.getItem("currentUserId");
   if (!userId) throw new Error("No user logged in");
@@ -84,7 +84,7 @@ export function deleteWallet(walletId:string){
 }
 
 export function deleteMnemonic() {
-  let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+  const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const userId = localStorage.getItem("currentUserId");
   if (!userId) throw new Error("No user logged in");
@@ -104,7 +104,7 @@ export function deleteMnemonic() {
 
 
 export async function getTransactions(walletId:string,limit=20){
-    let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+    const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const userId = localStorage.getItem("currentUserId");
   if (!userId) throw new Error("No user logged in");
@@ -137,7 +137,7 @@ const pubKey=new PublicKey(wallet.publicKey)
 }
 
 export async function getBalance(walletId:string){
-    let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+    const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const userId = localStorage.getItem("currentUserId");
   if (!userId) throw new Error("No user logged in");
@@ -157,7 +157,7 @@ export async function getBalance(walletId:string){
 }
 
 export async function createTransaction(toPublicKey: string, quantity: number, walletId: string) {
-  let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+  const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const userId = localStorage.getItem("currentUserId");
   if (!userId) throw new Error("No user logged in");
@@ -189,7 +189,7 @@ export async function createTransaction(toPublicKey: string, quantity: number, w
 }
 
 export async function topUpWallet(walletId: string, quantitySOL: number) {
-  let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+  const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const userId = localStorage.getItem("currentUserId");
   if (!userId) throw new Error("No user logged in");
@@ -213,7 +213,7 @@ export async function topUpWallet(walletId: string, quantitySOL: number) {
 }
 
 export function getWallet(walletId:string){
-      let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+      const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const userId = localStorage.getItem("currentUserId");
   if (!userId) throw new Error("No user logged in");

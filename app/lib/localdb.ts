@@ -14,7 +14,7 @@ interface Wallet {
 }
 
 export function signUpUser(email:string,password:string){
-     let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+     const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
     
    const existingUser=users.find(u=>u.email===email)
    if(existingUser){
@@ -34,7 +34,7 @@ export function signUpUser(email:string,password:string){
 }
 
 export function loginUser(email:string,password:string){
-     let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+     const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
    const user=users.find(u=>u.email===email && u.password===password)
    if(!user){
     return ''
@@ -49,7 +49,7 @@ export function logout(){
 }
 
 export function getUser(){
-     let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+     const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
      const userId=localStorage.getItem('currentUserId')
 const user=users.find(u=>u.userId===userId)
     return user

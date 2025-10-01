@@ -59,7 +59,7 @@ export default function WalletPage({ params }: { params: Promise<{ walletId: str
             setTransactions(res || [])
         }
         fetchTransactions()
-    }, [])
+    }, [walletId])
 
     const refreshWalletData = async () => {
         const balance = await getBalance(walletId)
